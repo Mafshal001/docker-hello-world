@@ -5,6 +5,8 @@ name: hello-world
 steps:
 - name: docker  
   image: plugins/docker
+  commands:
+    - echo hello world
   settings:
     # registry: docker.io
     repo: muhammadafshal001/docker-hello-world
