@@ -17,35 +17,47 @@
 #     tags: 
 #       - latest
 
+# kind: pipeline
+# type: docker
+# name: nodejs-image-push
+
+# steps:
+#   - name: print-message
+#     image: alpine
+#     commands:
+#       - echo "Pipeline is running!"
+#   - name: pull-nodejs-image
+#     image: plugins/docker
+#     settings:
+#       username:
+#         from_secret: docker_username
+#       password:
+#         from_secret: docker_password
+#       repo: node
+#       tags:
+#         - latest
+#       action: pull
+
+#   - name: push-nodejs-image
+#     image: plugins/docker
+#     settings:
+#       username:
+#         from_secret: docker_username
+#       password:
+#         from_secret: docker_password
+#       repo: muhammadafshal001/my-nodejs-app
+#       tags:
+#         - latest
+#       action: push
+
+
 kind: pipeline
 type: docker
-name: nodejs-image-push
+name: print-string
 
 steps:
   - name: print-message
     image: alpine
     commands:
-      - echo "Pipeline is running!"
-  - name: pull-nodejs-image
-    image: plugins/docker
-    settings:
-      username:
-        from_secret: docker_username
-      password:
-        from_secret: docker_password
-      repo: node
-      tags:
-        - latest
-      action: pull
+      - echo "Hello, Drone CI/CD!"
 
-  - name: push-nodejs-image
-    image: plugins/docker
-    settings:
-      username:
-        from_secret: docker_username
-      password:
-        from_secret: docker_password
-      repo: muhammadafshal001/my-nodejs-app
-      tags:
-        - latest
-      action: push
