@@ -22,33 +22,32 @@ type: docker
 name: nodejs-image-push
 
 steps:
-  - name: print-message
-    image: alpine
-    commands:
-      - echo "Pipeline is running!"
-  - name: pull-nodejs-image
-    image: plugins/docker
-    settings:
-      username:
-        from_secret: docker_username
-      password:
-        from_secret: docker_password
-      repo: node
-      tags:
-        - latest
-      action: pull
-
-  - name: push-nodejs-image
-    image: plugins/docker
-    settings:
-      username:
-        from_secret: docker_username
-      password:
-        from_secret: docker_password
-      repo: muhammadafshal001/docker-hello-world
-      tags:
-        - latest
-      action: push
+- name: print-message
+  image: alpine
+  commands:
+    - echo "Pipeline is running!"
+- name: pull-nodejs-image
+  image: plugins/docker
+  settings:
+   username:
+    from_secret: docker_username
+   password:
+    from_secret: docker_password
+    repo: node
+    tags:
+    - latest
+    action: pull
+- name: push-nodejs-image
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    repo: muhammadafshal001/docker-hello-world
+    tags:
+      - latest
+    action: push
 
 
 # kind: pipeline
