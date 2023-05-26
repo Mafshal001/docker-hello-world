@@ -26,15 +26,11 @@ steps:
   image: alpine
   commands:
     - echo "Pipeline is running!"
-    - echo `$docker_username`
-    - echo `$docker_password`
 - name: pull-nodejs-image
   image: plugins/docker
   settings:
-   username:
-    from_secret: docker_username
-   password:
-    from_secret: docker_password
+   username: muhammadafshal001
+   password: afshal@12345
     repo: node
     tags:
     - latest
@@ -42,10 +38,8 @@ steps:
 - name: push-nodejs-image
   image: plugins/docker
   settings:
-    username:
-      from_secret: docker_username
-    password:
-      from_secret: docker_password
+    username: muhammadafshal001
+    password: afshal@12345
     repo: muhammadafshal001/docker-hello-world
     tags:
       - latest
