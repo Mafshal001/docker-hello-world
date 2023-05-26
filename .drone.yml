@@ -20,8 +20,8 @@ kind: pipeline
 type: docker
 name: nodejs-image-push
 environment:
-  DOCKER_USERNAME: muhammadafshal001
-  DOCKER_PASSWORD: afshal12345
+  DOCKER_USERNAME: username
+  DOCKER_PASSWORD: password
 steps:
 - name: print-message
   image: alpine
