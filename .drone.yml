@@ -34,7 +34,6 @@ steps:
    username: ${DOCKER_USERNAME}
    password: ${DOCKER_PASSWORD}
    repo: library/node:latest
-   action: pull
 - name: push-nodejs-image
   image: plugins/docker
   settings:
