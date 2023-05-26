@@ -16,7 +16,6 @@
 #       from_secret: docker_password
 #     tags: 
 #       - latest
-
 kind: pipeline
 type: docker
 name: nodejs-image-push
@@ -34,9 +33,7 @@ steps:
   settings:
    username: ${DOCKER_USERNAME}
    password: ${DOCKER_PASSWORD}
-   repo: node
-   tags:
-   - latest
+   repo: node:latest
    action: pull
 - name: push-nodejs-image
   image: plugins/docker
@@ -47,6 +44,7 @@ steps:
    tags:
    - latest
    action: push
+
 
 
 # kind: pipeline
