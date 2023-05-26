@@ -28,12 +28,12 @@ steps:
   commands:
     - echo "Pipeline is running!"
     - echo ${DOCKER_USERNAME}
-- name: pull-nodejs-image
-  image: plugins/docker
-  settings:
-   username: ${DOCKER_USERNAME}
-   password: ${DOCKER_PASSWORD}
-   repo: node
+# - name: pull-nodejs-image
+#   image: plugins/docker
+#   settings:
+#    username: ${DOCKER_USERNAME}
+#    password: ${DOCKER_PASSWORD}
+#    repo: node
 - name: push-nodejs-image
   image: plugins/docker
   settings:
