@@ -1,18 +1,47 @@
+# kind: pipeline
+# type: docker
+# name: hello-world
+
+# steps:
+# - name: docker  
+#   image: plugins/docker
+#   commands:
+#     - echo hello world
+#   settings:
+#     # registry: docker.io
+#     repo: muhammadafshal001/docker-hello-world
+#     username:
+#       from_secret: docker_username
+#     password:
+#       from_secret: docker_password
+#     tags: 
+#       - latest
+
 kind: pipeline
 type: docker
-name: hello-world
+name: nodejs-image-push
 
 steps:
-- name: docker  
-  image: plugins/docker
-  commands:
-    - echo hello world
-  settings:
-    # registry: docker.io
-    repo: muhammadafshal001/docker-hello-world
-    username:
-      from_secret: docker_username
-    password:
-      from_secret: docker_password
-    tags: 
-      - latest
+  - name: pull-nodejs-image
+    image: plugins/docker
+    settings:
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+      repo: node
+      tags:
+        - latest
+      action: pull
+
+  - name: push-nodejs-image
+    image: plugins/docker
+    settings:
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+      repo: muhammadafshal001/my-nodejs-app
+      tags:
+        - latest
+      action: push
