@@ -1,21 +1,21 @@
-# kind: pipeline
-# type: docker
-# name: hello-world
+kind: pipeline
+type: docker
+name: hello-world
 
-# steps:
-# - name: docker  
-#   image: plugins/docker
-#   commands:
-#     - echo hello world
-#   settings:
-#     # registry: docker.io
-#     repo: muhammadafshal001/docker-hello-world
-#     username:
-#       from_secret: docker_username
-#     password:
-#       from_secret: docker_password
-#     tags: 
-#       - latest
+steps:
+- name: docker  
+  image: plugins/docker
+  commands:
+    - echo hello world
+  settings:
+    # registry: docker.io
+    repo: muhammadafshal001/docker-hello-world
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    tags: 
+      - latest
 
 # kind: pipeline
 # type: docker
@@ -51,13 +51,13 @@
 #       action: push
 
 
-kind: pipeline
-type: docker
-name: print-string
+# kind: pipeline
+# type: docker
+# name: print-string
 
-steps:
-  - name: print-message
-    image: alpine
-    commands:
-      - echo Hello, Drone CI/CD!
+# steps:
+#   - name: print-message
+#     image: alpine
+#     commands:
+#       - echo Hello, Drone CI/CD!
 
