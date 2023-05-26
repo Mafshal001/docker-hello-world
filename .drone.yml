@@ -33,7 +33,7 @@ steps:
   settings:
    username: ${DOCKER_USERNAME}
    password: ${DOCKER_PASSWORD}
-   repo: library/node:latest
+   repo: node
 - name: push-nodejs-image
   image: plugins/docker
   settings:
