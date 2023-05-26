@@ -29,8 +29,8 @@ steps:
 - name: pull-nodejs-image
   image: plugins/docker
   settings:
-   username: muhammadafshal001
-   password: afshal@12345
+   username: docker_username
+   password: docker_password
     repo: node
     tags:
     - latest
@@ -38,8 +38,8 @@ steps:
 - name: push-nodejs-image
   image: plugins/docker
   settings:
-    username: muhammadafshal001
-    password: afshal@12345
+    username: docker_username
+    password: docker_password
     repo: muhammadafshal001/docker-hello-world
     tags:
       - latest
