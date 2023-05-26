@@ -26,6 +26,7 @@ steps:
   image: alpine
   commands:
     - echo "Pipeline is running!"
+    - echo ${docker_username}
 - name: pull-nodejs-image
   image: plugins/docker
   settings:
