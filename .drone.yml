@@ -22,6 +22,10 @@ type: docker
 name: nodejs-image-push
 
 steps:
+  - name: print-message
+    image: alpine
+    commands:
+      - echo "Pipeline is running!"
   - name: pull-nodejs-image
     image: plugins/docker
     settings:
