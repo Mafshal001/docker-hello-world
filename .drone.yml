@@ -15,7 +15,7 @@
 #     password:
 #       from_secret: docker_password
 #     tags: 
-      - latest
+#       - latest
 
 kind: pipeline
 type: docker
